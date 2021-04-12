@@ -1,0 +1,29 @@
+::-webkit-input-placeholder { color: rgb(255, 255, 255); } 
+
+:-moz-placeholder { /* Firefox 18- */ color: rgb(255, 255, 255); } 
+
+::-moz-placeholder { /* Firefox 19+ */ color: rgb(255, 255, 255); } 
+
+:-ms-input-placeholder { color: rgb(255, 255, 255); }
+.body{
+    position: static;
+    background-image: url('https://us.123rf.com/450wm/bastinda18/bastinda181603/bastinda18160300107/53771941-luces-de-bokeh-fondo-p%C3%BArpura-de-la-fantas%C3%ADa-en-blanco.jpg?ver=6');
+    width: 100%;
+    height: 700px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }

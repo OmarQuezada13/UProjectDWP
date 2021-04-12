@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0px;
+}
+
+.form  {
+    background-color: #E7E7E7;
+}
+.form input, .form label {
+    margin-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; 
+    border: none; 
+    color: #525c66; 
+    font-size: 1em;
+     
+}

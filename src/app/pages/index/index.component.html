@@ -1,0 +1,48 @@
+<app-header></app-header>
+<div class="body">
+    <div class="frame">
+        <form class="search" (ngSubmit)="busquedaItem()" >
+            <input class="input" [ngModelOptions]="{standalone: true}" [(ngModel)]="input" type="text" placeholder="Buscador por nombre de item">
+            <input class="btnInput" type="submit" value="Search">
+        </form>
+        <p class="length">Se encotraron {{items.length}} items</p>
+        <div class="categoria">
+            <h3>Categorias</h3>
+            <form [formGroup]="form" >
+            
+                <div class="form-group">
+                    <div *ngFor="let cat of categorias">
+                      <label class="cat">
+                        <input type="checkbox" [value]="cat.description" (change)="onCheckboxChange($event)"  />
+                        {{cat.description}}
+                      </label>
+                    </div>
+                </div>
+                </form>
+           
+        </div>
+
+
+
+        <div class="items" *ngIf="items != 0" >
+            <div *ngFor="let item of items" class="item" [routerLink]="['/item/'+item.product_id]">
+               
+
+                <img class="imgItem" [routerLink]="['/item/'+item.product_id]" src="{{item['images_small']}}" alt=""><br>
+                <p [routerLink]="['/item/'+item.product_id]" class="nombreItem">{{item['short_description']}}</p>
+                <p class="precioItem">${{item['price'].toFixed(2)}}</p>
+
+            </div>
+
+        </div>
+        <div class="items" *ngIf="items == 0" >
+           <p>No se encontro ningun item con esa palabra</p>
+
+        </div>
+
+
+
+
+    </div>
+</div>
+<app-footer></app-footer>

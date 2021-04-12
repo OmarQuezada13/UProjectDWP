@@ -1,0 +1,7 @@
+<div class="header">
+    <img [routerLink]="['/index']" class="logo" src="../../../assets/logo.png"  alt="">
+    <div class="identificarse">
+        <p *ngIf="login" [routerLink]="['/login/index']" routerLinkActive="active">Login |</p><p *ngIf="login" [routerLink]="['/signUp']" routerLinkActive="active">| Sign Up</p>
+        <p *ngIf="!login" [routerLink]="['/get_orders']">{{customerName}} |</p> <p (click)="cerrar()" *ngIf="!login">| Cerrar Sesion</p> <img [routerLink]="['/cart']" src="../../../assets/4105931-add-to-cart-buy-cart-sell-shop-shopping-cart_113919.ico" alt=""><p>{{numCart}}</p>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<app-header></app-header>
+<div class="body">
+
+
+<div class="form">
+    <img src="../../../assets/logo.png" width="40%" alt="">
+    <h3 class="titulo">Sign Up</h3>
+    <div class="user-input-wrp">
+        <input [(ngModel)]="nombre"  type="text" class="inputText" required/>
+        <span  class="floating-label">Nombre*</span>
+      </div>
+      <div class="user-input-wrp">
+        <input [(ngModel)]="apellidoP" type="text" class="inputText" required/>
+        <span  class="floating-label">Apellido Paterno*</span>
+      </div>
+      <div class="user-input-wrp">
+        <input [(ngModel)]="apellidoM" type="text" class="inputText" required/>
+        <span  class="floating-label">Apellido Materno*</span>
+      </div>
+      <div class="user-input-wrp">
+        <input [(ngModel)]="telefono" type="number" class="inputText" required/>
+        <span  class="floating-label">Telefono*</span>
+      </div>
+      <div class="user-input-wrp">
+        <input [(ngModel)]="estado" type="text" class="inputText" required/>
+        <span  class="floating-label">Estado*</span>
+      </div>
+      <div class="user-input-wrp">
+        <input [(ngModel)]="ciudad" type="text" class="inputText" required/>
+        <span  class="floating-label">Ciudad*</span>
+      </div>
+      <div class="user-input-wrp">
+        <input [(ngModel)]="email" type="text" class="inputText" required/>
+        <span *ngIf="!emailE && !emailDE" class="floating-label">Email*</span>
+        <span *ngIf="emailE" class="floating-label-error">Email Invalido</span>
+        <span *ngIf="emailDE" class="floating-label-error">Email en Uso</span>
+      </div>
+      <div class="user-input-wrp">
+        <input [(ngModel)]="password" type="password" class="inputText" required/>
+        <span *ngIf="!passwordE" class="floating-label">Password*</span>
+        <span *ngIf="passwordE" class="floating-label-error">Password no Segura*</span>
+
+      </div>
+      <div class="user-input-wrp">
+        <input [(ngModel)]="password2" type="password" class="inputText" required/>
+        <span *ngIf="!password2E" class="floating-label">Password Confirmation*</span>
+        <span *ngIf="password2E" class="floating-label-error">Password Confirmation*</span>
+
+      </div>
+        <br>
+        <re-captcha class="captcha" (resolved)="resolved($event)" siteKey="6Lf_Gz8aAAAAADNRC54jBq0WxPdPmzTkpmgPHcTt"></re-captcha>
+
+        <br>
+        <label *ngIf="camposE" class="error" for="btnSubmit">Todos los campos son obligatorios favor de verificarlos</label>
+        <button (click)="registrar()" id="btnSubmit" class="btnSubmit" [disabled]="!captchaB">Registrar</button>
+        
+        
+        <p class="change_link">
+            Ya eres miembro?
+            <a href="#" class="to_register">Iniciar sesion </a>
+        </p>
+
+</div>
+</div>
+
+<app-footer></app-footer>
+

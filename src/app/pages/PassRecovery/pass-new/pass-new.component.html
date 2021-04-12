@@ -1,0 +1,21 @@
+<app-header></app-header>
+<div class="body">
+    <div class="form">
+        <img src="../../../assets/logo.png" width="40%" alt="">
+        <h3 class="titulo">Olvide mi Contraseña</h3>
+        <div class="user-input-wrp">
+            <input [(ngModel)]="password" type="password" class="inputText" required/>
+            <span *ngIf="!passwordE" class="floating-label">Ingrese contraseña nueva*</span>
+            <span *ngIf="passwordE" class="floating-label-error">Contraseña no Segura*</span>
+
+          </div>
+          <div class="user-input-wrp">
+            <input [(ngModel)]="password2" type="password" class="inputText" required/>
+            <span *ngIf="!password2E" class="floating-label">Confirme contraseña*</span>
+            <span *ngIf="password2E" class="floating-label-error">Contraseña no Coincide*</span>
+
+          </div>
+        <button (click)="enviar()" class="btnRecuperar">Actualizar</button>
+    </div>
+</div>
+<app-footer></app-footer>

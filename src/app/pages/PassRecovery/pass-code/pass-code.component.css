@@ -1,0 +1,79 @@
+.body{
+    position: static;
+    background-image: url('https://us.123rf.com/450wm/bastinda18/bastinda181603/bastinda18160300107/53771941-luces-de-bokeh-fondo-p%C3%BArpura-de-la-fantas%C3%ADa-en-blanco.jpg?ver=6');
+    width: 100%;
+    height: 700px;
+}
+.form{
+    position: absolute;
+    text-align: center;
+    width: 40%;
+    background-color: rgba(255, 255, 255, 0.705);
+    left: 50%;
+    top: 60%;
+    height: fit-content;
+    padding: 40px;
+    transform: translate(-50%,-50%);
+
+}.user-input-wrp {
+	position: relative;
+    width: 100%;
+    display: inline-block;
+    margin-right: 20px;
+    
+}
+.user-input-wrp .inputText{
+	width: 100%;
+	outline: none;
+	border:none;
+	border-bottom: 1px solid rgb(70, 33, 75);
+    box-shadow: none !important;
+    background:none;
+    color: rgb(0, 0, 0);
+}
+.user-input-wrp .inputText:focus{
+	border-color:  rgb(11, 35, 30);
+	border-width: medium medium 2px;
+}
+.user-input-wrp .floating-label {
+	position: absolute;
+	pointer-events: none;
+	top: 15px;
+	left: 10px;
+	transition: 0.2s ease all;
+}
+.user-input-wrp .floating-label-error {
+	position: absolute;
+	pointer-events: none;
+	top: 15px;
+	left: 10px;
+    transition: 0.2s ease all;
+    color: red;
+}
+
+.user-input-wrp input:focus ~ .floating-label,
+.user-input-wrp input:not(:focus):valid ~ .floating-label{
+	top: 0px;
+	left: 10px;
+	font-size: 13px;
+	opacity: 1;
+}
+.user-input-wrp input:focus ~ .floating-label-error,
+.user-input-wrp input:not(:focus):valid ~ .floating-label-error{
+	top: 0px;
+	left: 10px;
+	font-size: 13px;
+    opacity: 1;
+    color: red;
+}
+
+.form .btnRecuperar{
+    width: 100%;
+    height: 35px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    border: 0.5px solid;
+    cursor: pointer;
+    border-radius: 9px;
+}

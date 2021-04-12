@@ -1,0 +1,14 @@
+<app-header></app-header>
+<div class="body">
+    <div class="form">
+        <img src="../../../assets/logo.png" width="40%" alt="">
+        <h3 class="titulo">Olvide mi Contraseña</h3>
+        <div class="user-input-wrp">
+            <input [(ngModel)]="email"  type="text" class="inputText" required/>
+            <span *ngIf="!emailE" class="floating-label">Email*</span>
+            <span *ngIf="emailE" class="floating-label-error">Email no Valido*</span>
+          </div>
+        <button (click)="enviar()" class="btnRecuperar">Recuperar</button>
+    </div>
+</div>
+<app-footer></app-footer>

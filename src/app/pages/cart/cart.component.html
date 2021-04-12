@@ -1,0 +1,44 @@
+<app-header></app-header>
+<div class="body" *ngIf="this.cookieService.get('session_id')"  >
+    <div class="items">
+        <div class="item" *ngFor="let item of items['items']">
+            <img src="{{item.images_small}}" alt="">
+            <div class="descripcion">
+                <h3>{{item.short_description}}</h3>
+            </div>
+            <div class="precio">
+                <h5>Precio:${{item.price.toFixed(2)}}</h5>
+                <br>
+                <h5 class="cantidad">Cantidad:</h5><input [(ngModel)]="item.quantity" (ngModelChange)="itemUpdate(item['product_id'],item.quantity)" min="1" type="number">
+                <br>
+                <br>
+                <h5>Total:${{item.total.toFixed(2)}}</h5>
+                <button class="btnEliminar" (click)="deleteItem(item['product_id'])">Eliminar</button>
+            </div>
+        </div>
+    </div>
+    <div class="total">
+        <table style="width:100%">
+            <tr>
+              <td>Subtotal ({{items.items_quantity}} Items):</td>
+              <td>${{items.sub_total.toFixed(2)}}</td>
+            </tr>
+            <tr>
+                <td>Taxes:</td>
+                <td>${{items.taxes.toFixed(2)}}</td>
+              </tr>
+              <tr>
+                <td>Total:</td>
+                <td>${{items.total.toFixed(2)}}</td>
+              </tr>
+          </table>
+          <hr>
+          <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+
+    </div>
+</div>
+<div class="body" *ngIf="!this.cookieService.get('session_id')">
+    <h3 class="noSesion">Usted no tiene una sesion Iniciada</h3>
+    <button class="noSesionBtn" [routerLink]="['/login/cart']">Iniciar Sesion</button>
+</div>
+<app-footer></app-footer>

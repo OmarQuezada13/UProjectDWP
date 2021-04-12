@@ -1,0 +1,24 @@
+<app-header></app-header>
+<div class="body">
+    <h2>Historial de Pedidos</h2>
+    <table class="table" style="width:100%">
+        <tr>
+          <th>Fecha de compra</th>
+          <th>Total</th>
+          <th>Metodo de Pago</th>
+          <th>Estatus</th>
+          <th>Pedidio</th>
+
+        </tr>
+        <tr *ngFor="let order of orders">
+          <td>{{order.date_order}}</td>
+          <td>{{order.total}}</td>
+          <td>Paypal</td>
+          <td>{{order.status}}</td>
+          <td>{{order.order_id}}</td>
+
+        </tr>
+      
+      </table>
+</div>
+<app-footer></app-footer>

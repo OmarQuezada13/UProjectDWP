@@ -1,0 +1,26 @@
+<app-header></app-header>
+<div class="body"> 
+    <div class="form">
+        <img src="../../../assets/logo.png" width="40%" alt="">
+        <h3 class="titulo">Login</h3>
+        <div class="user-input-wrp">
+            <input [(ngModel)]="email"  type="text" class="inputText" required/>
+            <span  class="floating-label">Email*</span>
+          </div>
+          <div class="user-input-wrp">
+            <input [(ngModel)]="pass" type="password" class="inputText" required/>
+            <span  class="floating-label">Password*</span>
+          </div>
+
+            <label for="recuerdame">Recordarme</label>
+        <input [(ngModel)]="recordarme" id="recuerdame" type="checkbox">
+     
+        <p>Olvidaste tu contraseña? <a [routerLink]="['/pass/send']" routerLinkActive="active">Recuperala aqui</a> </p>
+        <br>
+        <p *ngIf="error" style="color: red; text-align: center;" >{{error}}</p>
+        <button (click)="enviar()" class="btnLogin">Login</button>
+        
+        <p>Aun no tienes cuenta? <a href="">Registrate aqui</a> </p>
+    </div>
+</div>
+<app-footer></app-footer>
