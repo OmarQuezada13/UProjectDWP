@@ -86,7 +86,7 @@ public camposE:boolean = false;
         } else {
           console.log(pass);
           
-          this.router.navigate(['login'])
+          this.router.navigate(['login/index'])
 
         }
         
