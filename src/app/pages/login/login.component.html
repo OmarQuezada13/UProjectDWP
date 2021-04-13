@@ -20,7 +20,7 @@
         <p *ngIf="error" style="color: red; text-align: center;" >{{error}}</p>
         <button (click)="enviar()" class="btnLogin">Login</button>
         
-        <p>Aun no tienes cuenta? <a href="">Registrate aqui</a> </p>
+        <p>Aun no tienes cuenta? <a [routerLink]="['/signUp']">Registrate aqui</a> </p>
     </div>
 </div>
 <app-footer></app-footer>
