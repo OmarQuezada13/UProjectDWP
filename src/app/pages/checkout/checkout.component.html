@@ -1,0 +1,33 @@
+<app-header></app-header>
+<div class="body" *ngIf="this.cookieService.get('session_id')"  >
+    <h3 style="position: relative; left: 50%; transform: translate(-50%,0px); text-align: center; background-color: white; font-size: 20px; width: 80%; border-radius: 8px;">Resumen de Pedido</h3>
+    <br><br>
+    <div class="items">
+        <div class="item" *ngFor="let item of items['items']">
+            <h4>{{item.quantity}} x {{item.short_description}}</h4>
+        </div>
+    </div>
+    <div class="total">
+        <table style="width:100%">
+            <tr>
+              <td>Subtotal ({{items.items_quantity}} Items):</td>
+              <td>${{items.sub_total.toFixed(2)}}</td>
+            </tr>
+            <tr>
+                <td>Taxes:</td>
+                <td>${{items.taxes.toFixed(2)}}</td>
+              </tr>
+              <tr>
+                <td>Total:</td>
+                <td>${{items.total.toFixed(2)}}</td>
+              </tr>
+          </table>
+          <hr>
+        <ngx-paypal [config]="payPalConfig"></ngx-paypal> 
+    </div>
+</div>
+<div class="body" *ngIf="!this.cookieService.get('session_id')">
+    <h3 class="noSesion">Usted no tiene una sesion Iniciada</h3>
+    <button class="noSesionBtn" [routerLink]="['/login/cart']">Iniciar Sesion</button>
+</div>
+<app-footer></app-footer>

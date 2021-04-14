@@ -19,6 +19,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { CartComponent } from './pages/cart/cart.component'
 import { NgxPayPalModule } from 'ngx-paypal';
 import { GetOrdersComponent } from './pages/get-orders/get-orders.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { GetOrdersComponent } from './pages/get-orders/get-orders.component';
     IndexComponent,
     ItemComponent,
     CartComponent,
-    GetOrdersComponent
+    GetOrdersComponent,
+    CheckoutComponent
     
     
   ],

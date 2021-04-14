@@ -8,11 +8,12 @@ import {
   ICreateOrderRequest
 } from 'ngx-paypal';
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  selector: 'app-checkout',
+  templateUrl: './checkout.component.html',
+  styleUrls: ['./checkout.component.css']
 })
-export class CartComponent implements OnInit {
+export class CheckoutComponent implements OnInit {
+
   public payPalConfig?: IPayPalConfig;
   public items: any;
   public itemsPaypal: any = []
@@ -115,6 +116,3 @@ export class CartComponent implements OnInit {
     this.router.navigate([currentUrl]);
   }
 }
-
-
-

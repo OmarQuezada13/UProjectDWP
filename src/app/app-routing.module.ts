@@ -9,6 +9,7 @@ import { PassRecoveryComponent } from './pages/PassRecovery/pass-recovery/pass-r
 import { RegistroComponent } from './pages/registro/registro.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { GetOrdersComponent } from './pages/get-orders/get-orders.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path:'pass/new', component:PassNewComponent},
   {path:'item/:p' , component:ItemComponent},
   {path:'cart', component:CartComponent},
-  {path:'get_orders', component:GetOrdersComponent}
+  {path:'get_orders', component:GetOrdersComponent},
+  {path:'checkOut', component:CheckoutComponent}
 ];
 
 @NgModule({

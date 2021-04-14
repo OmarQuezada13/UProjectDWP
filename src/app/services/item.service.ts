@@ -33,7 +33,7 @@ export class ItemService {
   }
   public deleteItem(item_id:any){
     let data = { session_id: this.cookieService.get('session_id'),item_id:item_id }
-    return this.http.request('delete',`${this.url}cart/remove_all`, {body:data}).toPromise()
+    return this.http.request('delete',`${this.url}cart/remove_item`, {body:data}).toPromise()
 
   }
   public updateItem(item_id:any,item_quantity:any){
